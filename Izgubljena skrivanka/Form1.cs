@@ -38,6 +38,8 @@ namespace Izgubljena_skrivanka
         {
             InitializeComponent();
 
+            Cursor = new Cursor(Application.StartupPath + "\\Miska\\snezak.ico");
+
             Obvestilo.ShowBalloonTip(1000, "Snežak sporoča", "ŽIVJO! Pomagaj mi poiskati izgubljene črke!", ToolTipIcon.Info);
             
             foreach (Control Kontrola in Controls)
@@ -115,7 +117,6 @@ namespace Izgubljena_skrivanka
 
         private void Iskanje_MouseEnter(object sender, EventArgs e)
         {
-            Cursor = Cursors.Hand;
             Igraj.URL = "hover.wav";
             Button Moja = (Button)sender;
             Moja.Size = new Size(Moja.Width + 2, Moja.Height + 2);
@@ -123,7 +124,6 @@ namespace Izgubljena_skrivanka
 
         private void Iskanje_MouseLeave(object sender, EventArgs e)
         {
-            Cursor = Cursors.Default;
             Button Moja = (Button)sender;
             Moja.Size = new Size(Moja.Width - 2, Moja.Height - 2);
         }
